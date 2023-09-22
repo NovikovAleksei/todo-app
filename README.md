@@ -15,10 +15,23 @@ Clone this repository to your local machine
 git clone git@github.com:NovikovAleksei/todo-app.git
 ```
 
-Then navigate to the repo's folder and start up with Sail
+Then navigate to the repo's folder and install dependencies
 
 ```
-./vendor/bin/sail up
+composer install
+```
+
+Then navigate to the repo's folder and start up with Sail 
+
+```
+./vendor/bin/sail up -d
+```
+
+Then navigate to the repo's folder and start front end dependencies
+
+```
+npm install
+npm run dev
 ```
 
 After starting You are now able to log in to your Docker desktop in container
@@ -35,4 +48,6 @@ Set database mock up credentials
 admin@todo-app.com
 secret
 ```
+
+After all actions go to http://localhost/login and log in
 
