@@ -38,7 +38,7 @@ After starting You are now able to log in to your Docker desktop in container
 
 
 ```
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 php artisan db:seed --class=TaskSeeder
 ```
 
@@ -50,4 +50,12 @@ secret
 ```
 
 After all actions go to http://localhost/login and log in
+After logged in, please go to the Tasks tab in header navigation
+
+If you want to manage tasks in db please go to http://localhost:8080/
+
+```
+sail
+password
+```
 
