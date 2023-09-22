@@ -34,7 +34,7 @@ npm install
 npm run dev
 ```
 
-After starting You are now able to log in to your Docker desktop in container
+After starting You are now able to log in to your Docker desktop in container and run commands
 
 
 ```
@@ -42,7 +42,7 @@ php artisan migrate:fresh --seed
 php artisan db:seed --class=TaskSeeder
 ```
 
-Set database mock up credentials
+Set log in mock up credentials
 
 ```
 admin@todo-app.com
