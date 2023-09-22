@@ -2,58 +2,37 @@
 
 Make sure you have the required dependencies installed
 
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [Vagrant](http://www.vagrantup.com/downloads.html)
+Before we create a new Laravel application on your Windows machine, 
+make sure to install <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>. Next, you should ensure that
+Windows Subsystem for Linux 2 (WSL2) is installed and enabled. 
+WSL allows you to run Linux binary executables natively on Windows 10. 
+Information on how to install and enable WSL2 can be found within Microsoft's 
+developer environment documentation.
 
 Clone this repository to your local machine
 
 ```
-git clone git@git.joomplace.com:scratch/CMS.git
+git clone git@github.com:NovikovAleksei/todo-app.git
 ```
 
-Then navigate to the repo's folder and start up Vagrant
+Then navigate to the repo's folder and start up with Sail
 
 ```
-vagrant up
+./vendor/bin/sail up
 ```
 
-After starting You are now able to log in to your virtual machine from the terminal using
+After starting You are now able to log in to your Docker desktop in container
+
 
 ```
-vagrant ssh
+php artisan migrate --seed
+php artisan db:seed --class=TaskSeeder
 ```
 
-Then `cd` into the `/var/www/app` shared folder to get full access to your Laravel project
+Set database mock up credentials
 
 ```
-cd /var/www/app
-cp .env.local .env
-```
-Set database settings
-
-```
-composer install
-php artisan key:generate
-php artisan migrate
+admin@todo-app.com
+secret
 ```
 
-## Paths
-
-npm commands run:
-
-**npm run prod** - for new template pages, which are on the way **resources/views/templates/belitsoft_refresh**
-
-run on this way - resources/views/templates/belitsoft_refresh
-
-**npm run prod** - for old template pages
-
-run on this way - /
-
-
-## Public front
-
-Run publish command
-
-```
-php artisan vendor:publish --tag=public --force
-```
